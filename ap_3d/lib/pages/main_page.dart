@@ -4,11 +4,11 @@
 
 
 import 'package:ap_3d/screens/profile_page.dart';
+import 'package:ap_3d/screens/task_page.dart'; 
 import 'package:flutter/material.dart';
 import 'package:ap_3d/theme/theme.dart';
-//import 'package:intl/intl.dart'; // Импортируем пакет intl для форматирования даты
+import 'package:intl/intl.dart'; // Импортируем пакет intl для форматирования даты
 
-//import '../screens/task_page.dart'; // Импортируем APTheme
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class _MainPageState extends State<MainPage> {
   DateTime? _selectedDate;
 
   static final List<Widget> _widgetOptions = <Widget>[
-    const Center(child: Text('Задачи')), //const TaskPage(),
+    const TaskPage(),
     const Center(child: Text('Сегодня')),
     const Center(child: Text('Выполнено')),
     const ProfilePage(), // Now shows ProfilePage
@@ -85,10 +85,10 @@ class _MainPageState extends State<MainPage> {
                           }
                         }
                       },
-                      child: Text( 'AA'
-                        //_selectedDate != null
-                        //    ? 'Дедлайн: ${DateFormat('dd.MM.yyyy HH:mm').format(_selectedDate!)}'
-                        //    : 'Выбрать дедлайн',
+                      child: Text( 
+                        _selectedDate != null
+                            ? 'Дедлайн: ${DateFormat('dd.MM.yyyy HH:mm').format(_selectedDate!)}'
+                            : 'Выбрать дедлайн',
                       ),
                     ),
                   ],

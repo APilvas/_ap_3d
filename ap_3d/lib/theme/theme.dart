@@ -6,6 +6,7 @@ class DoDidDoneTheme {
       brightness: Brightness.light,
       primary: const Color(0xFF9F7BF6),  // Primary color
       secondary: const Color(0xFF4CEb8b),  // Secondary color
+      onPrimary: Colors.white,
     ),
     useMaterial3: true,
         

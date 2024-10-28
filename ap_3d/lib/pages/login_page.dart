@@ -35,53 +35,68 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Row(
-              //   mainAxisAlignment: MainAxisAlignment.center,
-              //   children: [
-              //     Image.asset(
-              //       'assets/0qode_symbol_1.png', // Замените на правильный путь к файлу
-              //       height: 60, // Устанавливаем высоту изображения
-              //     ),
-              //     const SizedBox(width: 8),
-              //     // Добавляем текст "zerocoder"
-              //     Text(
-              //       'zerocoder',
-              //       style: TextStyle(
-              //         fontSize: 62,
-              //         fontWeight: FontWeight.bold,
-              //         color: Colors.white, // Белый цвет текста
-              //       ),
-              //     ),
-              //   ],
-              // ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  // Image.asset(
+                  //   'assets/ZC.png', // Замените на правильный путь к файлу
+                  //   height: 60, // Устанавливаем высоту изображения
+                  // ),
+                  const CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage('assets/ZC.png'), // Замените на путь к вашему аватару
+                  ),
+                  const SizedBox(width: 8),
+                  // Добавляем текст "zerocoder"
+                  Text(
+                    'zerocoder',
+                    style: TextStyle(
+                      fontSize: 36,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white, // Белый цвет текста
+                    ),
+                  ),
+                ],
+              ),
               const SizedBox(height: 30),
               // Добавляем текст "Do"
-              // RichText(
-              //   text: TextSpan(
-              //     style: const TextStyle(
-              //       fontSize: 48,
-              //       fontWeight: FontWeight.bold,
-              //     ),
-              //     children: [
-              //       TextSpan(
-              //         text: 'Do',
-              //         style: TextStyle(
-              //           color: DoDidDoneTheme.lightTheme.colorScheme.primary,
-              //         ),
-              //       ),
-              //       const TextSpan(
-              //         text: 'Did',
-              //         style: TextStyle(color: Colors.white),
-              //       ),
-              //       TextSpan(
-              //         text: 'Done',
-              //         style: TextStyle(
-              //           color: DoDidDoneTheme.lightTheme.colorScheme.secondary,
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
+              RichText(
+                text: TextSpan(
+                  style: const TextStyle(
+                    fontSize: 48,
+                    fontWeight: FontWeight.bold,
+                    shadows: [
+                      Shadow(
+                        //color: Colors.black.withOpacity(0.5), // Цвет тени (возникает ошибка!)
+                        // color: Color(0x80000000), // Черный с прозрачностью 50% (работает!)
+                        color: Color.fromRGBO(0, 0, 0, 0.5), // Черный с прозрачностью 50% (работает!)
+                        offset: Offset(2, 2), // Смещение тени
+                        blurRadius: 3, // Радиус размытия
+                      ),
+                    ],
+                  ),
+                  children: [
+                    TextSpan(
+                      text: 'Do',
+                      style: TextStyle(
+                        color: DoDidDoneTheme.lightTheme.colorScheme.secondary,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Did',
+                      style: TextStyle(
+                        color: DoDidDoneTheme.lightTheme.colorScheme.onPrimary,
+                      ),
+                    ),
+                    TextSpan(
+                      text: 'Done',
+                      style: TextStyle(
+                        color: DoDidDoneTheme.lightTheme.colorScheme.primary,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               const SizedBox(height: 30),
               // Заголовок
               Text(
