@@ -1,3 +1,4 @@
+import 'package:ap_3d/pages/main_page.dart';
 import 'package:flutter/material.dart';
 import '../theme/theme.dart';
 
@@ -137,10 +138,10 @@ class _LoginPageState extends State<LoginPage> {
               // Кнопка "Войти"
               ElevatedButton(
                 onPressed: () {
-                  //Navigator.pushReplacement(
-                      //context,
-                      //MaterialPageRoute(
-                          //builder: (context) => const MainPage()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const MainPage()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: !isLogin
