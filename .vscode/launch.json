@@ -1,0 +1,128 @@
+{
+    // Используйте IntelliSense, чтобы узнать о возможных атрибутах.
+    // Наведите указатель мыши, чтобы просмотреть описания существующих атрибутов.
+    // Для получения дополнительной информации посетите: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ap_3d",
+            "cwd": "ap_3d",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "ap_3d (profile mode)",
+            "cwd": "ap_3d",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "ap_3d (release mode)",
+            "cwd": "ap_3d",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "FN02_05_Экран профиля",
+            "cwd": "Result\\_Day_02\\FN02_05_Экран профиля",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "FN02_05_Экран профиля (profile mode)",
+            "cwd": "Result\\_Day_02\\FN02_05_Экран профиля",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "FN02_05_Экран профиля (release mode)",
+            "cwd": "Result\\_Day_02\\FN02_05_Экран профиля",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "FN02_06_Доработка экрана профиля",
+            "cwd": "Result\\_Day_02\\FN02_06_Доработка экрана профиля",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "FN02_06_Доработка экрана профиля (profile mode)",
+            "cwd": "Result\\_Day_02\\FN02_06_Доработка экрана профиля",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "FN02_06_Доработка экрана профиля (release mode)",
+            "cwd": "Result\\_Day_02\\FN02_06_Доработка экрана профиля",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "FN03_02_Сервис авторизации",
+            "cwd": "Result\\_Day_03\\FN03_02_Сервис авторизации",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "FN03_02_Сервис авторизации (profile mode)",
+            "cwd": "Result\\_Day_03\\FN03_02_Сервис авторизации",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "FN03_02_Сервис авторизации (release mode)",
+            "cwd": "Result\\_Day_03\\FN03_02_Сервис авторизации",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "1",
+            "cwd": "Result\\_Day_02\\FN02_10_Вставка логотипа Zerocoder\\1",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "1 (profile mode)",
+            "cwd": "Result\\_Day_02\\FN02_10_Вставка логотипа Zerocoder\\1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "1 (release mode)",
+            "cwd": "Result\\_Day_02\\FN02_10_Вставка логотипа Zerocoder\\1",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "ap_3d",
+            "cwd": "Result\\_Day_02\\FN02_10_Вставка логотипа Zerocoder\\ap_3d",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "ap_3d (profile mode)",
+            "cwd": "Result\\_Day_02\\FN02_10_Вставка логотипа Zerocoder\\ap_3d",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "ap_3d (release mode)",
+            "cwd": "Result\\_Day_02\\FN02_10_Вставка логотипа Zerocoder\\ap_3d",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

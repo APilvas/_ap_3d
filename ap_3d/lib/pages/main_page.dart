@@ -4,7 +4,8 @@
 
 
 import 'package:ap_3d/screens/profile_page.dart';
-import 'package:ap_3d/screens/task_page.dart'; 
+import 'package:ap_3d/screens/task_page.dart';
+import 'package:cloud_firestore/cloud_firestore.dart'; 
 import 'package:flutter/material.dart';
 import 'package:ap_3d/theme/theme.dart';
 import 'package:intl/intl.dart'; // Импортируем пакет intl для форматирования даты
@@ -21,7 +22,7 @@ class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
 
   // Для хранения выбранной даты и времени
-  DateTime? _selectedDate;
+  // DateTime? _selectedDate; - заменена на _deadline !
 
   static final List<Widget> _widgetOptions = <Widget>[
     const TaskPage(),
@@ -41,6 +42,10 @@ class _MainPageState extends State<MainPage> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        String _title = '';
+        String _description = '';
+        DateTime? _deadline = DateTime.now();
+        
         return StatefulBuilder( // Используем StatefulBuilder для обновления состояния диалога
           builder: (context, setState) { // Передаем setState в билдер
             return AlertDialog(
@@ -49,12 +54,18 @@ class _MainPageState extends State<MainPage> {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const TextField(
+                    TextField(
                       decoration: InputDecoration(hintText: 'Название задачи'),
+                      onChanged: (value) {
+                        _title = value;
+                      },
                     ),
                     const SizedBox(height: 16.0),
-                    const TextField(
+                    TextField(
                       decoration: InputDecoration(hintText: 'Описание'),
+                      onChanged: (value) {
+                        _description = value;
+                      },
                     ),
                     const SizedBox(height: 16.0),
                     // Кнопка выбора даты и времени
@@ -67,14 +78,14 @@ class _MainPageState extends State<MainPage> {
                           firstDate: DateTime(2000),
                           lastDate: DateTime(2101),
                         );
-                        if (pickedDate != null && pickedDate != _selectedDate) {
+                        if (pickedDate != null && pickedDate != _deadline) {
                           final TimeOfDay? pickedTime = await showTimePicker(
                             context: context,
                             initialTime: TimeOfDay.now(),
                           );
                           if (pickedTime != null) {
                             setState(() {
-                              _selectedDate = DateTime(
+                              _deadline = DateTime(
                                 pickedDate.year,
                                 pickedDate.month,
                                 pickedDate.day,
@@ -86,8 +97,8 @@ class _MainPageState extends State<MainPage> {
                         }
                       },
                       child: Text( 
-                        _selectedDate != null
-                            ? 'Дедлайн: ${DateFormat('dd.MM.yyyy HH:mm').format(_selectedDate!)}'
+                        _deadline != null
+                            ? 'Дедлайн: ${DateFormat('dd.MM.yyyy HH:mm').format(_deadline!)}'
                             : 'Выбрать дедлайн',
                       ),
                     ),
@@ -102,9 +113,18 @@ class _MainPageState extends State<MainPage> {
                   child: const Text('Отмена'),
                 ),
                 TextButton(
-                  onPressed: () {
+                  onPressed: () async {
                     // TODO: Добавить логику сохранения задачи
-                    Navigator.of(context).pop(); // Закрыть диалог
+                    // Добавление задачи в FirebaseFirestore
+                    final tasksCollection =
+                        FirebaseFirestore.instance.collection ("tasks");
+                    await tasksCollection.add({
+                      'title': _title,
+                      'description': _description, 
+                      'deadline': _deadline,
+                    });
+                    Navigator.pop (context); // Закрыть диалог после сохранения
+                    // Navigator.of(context).pop(); // Закрыть диалог
                   },
                   child: const Text('Сохранить'),
                 ),
